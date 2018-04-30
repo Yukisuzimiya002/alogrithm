@@ -14,7 +14,7 @@ int n, R, T, ans;
 bool flag;
 inline void _push(_pair v){ que[tail] = v; tail++; }
 inline void _pop(){ head++; }
-bool judge(_pair &t, _pair v)   //ÅĞ¶ÏÊÇ·ñÓĞ½»¼¯£¬Èç¹ûÓĞ¸üĞÂ½»¼¯t
+bool judge(_pair &t, _pair v)   //åˆ¤æ–­æ˜¯å¦æœ‰äº¤é›†ï¼Œå¦‚æœæœ‰æ›´æ–°äº¤é›†t
 {
     if (!(t.x > v.y || t.y < v.x))
     {
@@ -35,7 +35,7 @@ int main()
         {
             int a, b;
             scanf("%d%d", &a, &b);
-            if (b > R) flag = 1;         //Èç¹ûÎŞ·¨µ½¸²¸ÇÕâ¸öµãÁîflag=1
+            if (b > R) flag = 1;         //å¦‚æœæ— æ³•åˆ°è¦†ç›–è¿™ä¸ªç‚¹ä»¤flag=1
             _push(_pair(a - sqrt((double)R*R - b*b), a + sqrt((double)R*R - b*b)));
         }
         if (flag) printf("Case %d: -1\n",T);
@@ -45,11 +45,11 @@ int main()
             while (head != tail)
             {
                 ans++;
-                _pair t = que[head];    //½»¼¯³õÊ¼»¯ÎªµÚÒ»¸öÇø¼ä
+                _pair t = que[head];    //äº¤é›†åˆå§‹åŒ–ä¸ºç¬¬ä¸€ä¸ªåŒºé—´
                 while (head != tail)
                 {
                     _pair v = que[head];
-                    if (judge(t, v)) _pop();   //ÓĞ½»¼¯¾Í³ö¶Ó
+                    if (judge(t, v)) _pop();   //æœ‰äº¤é›†å°±å‡ºé˜Ÿ
                     else break;
                 }
             }
